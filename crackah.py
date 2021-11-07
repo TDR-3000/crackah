@@ -14,6 +14,7 @@ ingfo = (
  - Instagram   : ramdhan.ramadhian99
  - Github      : Github.com/Ramdhan7
  - Tool name   : Crackah The Master Crack
+ - Version     : 1.0 (BETA) "In Development
  
 %s"""%(Hj,Mt))
 import os
@@ -59,13 +60,12 @@ def folder():
 IP = requests.get("https://api.ipify.org/").text
 def banner():
 	print (''' %s 
-Presented%s   \n ______                __         __  
-  / ____/________ ______/ /______ _/ /_ 
- / /   / ___/ __ `/ ___/ //_/ __ `/ __ \
-/ /___/ /  / /_/ / /__/ ,< / /_/ / / / /
-\____/_/   \__,_/\___/_/|_|\__,_/_/ /_/  \n %s[%s+%s] Author : %sRamdhan Ramadhian XD \n %s[%s+%s] Facebook : Facebook.com/105805581664563 \n %s[%s+%s] Github : Github.com/Ramdhan7/crackah \n [%s+%s] Alamat IP : %s%s'''%
+Presented%s \n_____             __        __ 
+ / ___/______ _____/ /_____ _/ / 
+/ /__/ __/ _ `/ __/  '_/ _ `/ _ \
+\___/_/  \_,_/\__/_/\_\\_,_/_//_/  \n %s[%s+%s] Author : %sRamdhan Ramadhian XD \n %s[%s+%s] Facebook : Facebook.com/105805581664563 \n %s[%s+%s] Github : Github.com/Ramdhan7/crackah \n [%s+%s] Alamat IP : %s%s'''%
  (U,O,U,O,U,O,U,O,U,O,P,O,P,U,P,IP))
-# MASUK TOKEN (TOKEN LISTRIK)
+# MASUK TOKEN
 header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), "x-fb-sim-hni": str(random.randint(20000, 40000)), "x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": "NokiaC3-00/5.0 (07.20) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+ ;]", "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
 def masuk():
     os.system('clear');banner()
@@ -183,22 +183,22 @@ def postingan(romz,headers=header):
         bff.close()
         print ('\n\n %s[%s√%s] Succes dump id postingan '%(P,H,P))
         print ('%s [%s√%s] File dump tersimpan :%s %s '%(P,H,P,H,file))
-        raw_input('\n%s [ %senter %s] '%(P,K,P))
+        raw_input('\n%s [ %senter %s] '%(P,O,P))
         menu()
     except Exception as e:
         exit('\n %s[!] gagal dump id'%(P))
 ### Result Hasil
 def cek_opsi():
-	print((p+"\n ["+k+"•"+m+"•"+p+"] Masukan File sesi.txt"))
-	files = input(p+" ["+k+"•"+m+"•"+p+"] File: ")
+	print((%s\n [%s•%s•%s] Masukan File sesi.txt")) '%(P,O,P,O)) 
+	files = input(%s [%s•%s•%s] File: ") '%(P,O,P,O)) 
 	if files == "":
 		cek_opsi()
 	try:
 		buka_baju = open(files, "r").readlines()
 	except IOError:
-		exit(p+" ["+k+"•"+m+"•"+p+"] Files %s%s%s Tidak Ada!"%(h,files,p))
-	print(p+" [%s•%s•%s] Total Account Sesi : "+str(len(buka_baju)))
-	print(p+" ["%s•%s•%s] Check Opsi Checkpoint, Please Wait...")
+		exit(%s" [%s•%s•%s] Files %s%s%s Tidak Ada!"%(h,files,p))
+	print(%s [%s•%s•%s] Total Account Sesi : "+str(len(buka_baju))) '%(P,O,P,O)) 
+	print(%s [%s•%s•%s] Check Opsi Checkpoint, Please Wait...") '%(P,O,P,O)) 
 	for memek in buka_baju:
 		kontol = memek.replace("\n","")
 		titid  = kontol.split(" • ")
@@ -207,7 +207,7 @@ def cek_opsi():
 			check_in(titid[0].replace(" + ",""), titid[1])
 		except requests.exceptions.ConnectionError:
 			pass
-	input("%s [Back]"%(p))
+	input("%s [Kembali]"%(p))
 	menu()
 # START CRACK
 class ngentod:
@@ -216,7 +216,7 @@ class ngentod:
         self.id = []
     def rmdy(self):
         try:
-            self.apk = raw_input('\n %s[?] file dump :%s '%(P,K))
+            self.apk = raw_input('\n %s[?] file dump :%s '%(P,O))
             self.id = open(self.apk).read().splitlines()
             print '%s [%s*%s] jumlah id : %s%s' %(P,K,P,H,len(self.id))
         except:
@@ -648,9 +648,9 @@ def menu():
     print (' (%s05%s) %sMemulai Operasi Crack %s'%(O,P,M,P)) 
     print (' (%s06%s) User agent'%(O,K)) 
     print (' (%s07%s) Cek Pendapatan Akun'%(O,B))
-    print (' (%s08%s) Cek Jenis Checkpoint'%(H,B)) 
+    print (' (%s08%s) Cek Jenis Checkpoint'%(H,O)) 
     #print (' (%s09%s) Gabung group'%(O,P))
-    #print (' (%s10%s) Info script'%(O,P))
+    print (' (%s09%s) Informasi Alat'%(O,P))
     print (' (%s00%s) Log Out '%(P,H))
     unik = raw_input('\n%s [!] Menu : %s'%(P,O))
     if unik == '':
