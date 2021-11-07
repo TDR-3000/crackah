@@ -61,7 +61,8 @@ def folder():
 # LOGO (LO GOBLOK)
 IP = requests.get("https://api.ipify.org/").text
 def banner():
-	print (''' %s    ______                __         __  
+	print (''' %s 
+Presented%s   \n ______                __         __  
   / ____/________ ______/ /______ _/ /_ 
  / /   / ___/ __ `/ ___/ //_/ __ `/ __ \
 / /___/ /  / /_/ / /__/ ,< / /_/ / / / /
