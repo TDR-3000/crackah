@@ -566,8 +566,8 @@ def crack2(user, pwx):
 None
 # GANTI USER AGENT
 def useragent():
-	print ("\n%s [%s01%s] Ganti user agent "%(P,K,P))
-	print (" [%s02%s] Cek user agent "%(K,P))
+	print ("\n%s [%s01%s] Ganti user agent "%(P,O,P))
+	print (" [%s02%s] Cek user agent "%(O,P))
 	print (" [%s00%s] Kembali "%(M,P))
 	uas()
 def uas():
@@ -693,31 +693,31 @@ def hasill(c):
 		if rom in['1','01']:
 			try:
 				oke = open("hack.txt", "r").readlines()
-				print(" %s[%s*%s] --------------------------------------"%(P,K,P));jeda(2)
-				jalan(" [%s*%s] total akun : %s%s"%(O,P,H,str(len(oke))))
-				print(" %s[%s*%s] --------------------------------------%s"%(P,K,P,H));jeda(2)
+				print(" %s[%s*%s] --------------------------------------"%(P,O,P));jeda(2)
+				jalan(" [%s*%s] Total akun : %s%s"%(O,P,H,str(len(oke))))
+				print(" %s[%s*%s] --------------------------------------%s"%(P,O,P,H));jeda(2)
 				okek = open("hack.txt", "r").read()
 				print (okek)
-				exit(" %s[%s*%s] --------------------------------------"%(P,K,P));jeda(2)
+				exit(" %s[%s*%s] --------------------------------------"%(P,O,P));jeda(2)
 			except IOError,KeyError:
-				exit (M+"\n [!] tidak ada hasil awokawokawok")
+				exit (M+"\n [!] Tidak Mendapatkan Pendapatan")
 		elif rom in['2','02']:
 			try:
 				cepe = open("sesi.txt", "r").readlines()
-				print(" %s[%s*%s] --------------------------------------"%(P,K,P));jeda(2)
-				jalan(" [%s*%s] total akun : %s%s"%(O,P,O,str(len(cepe))))
-				print(" %s[%s*%s] --------------------------------------%s"%(P,K,P,K));jeda(2)
+				print(" %s[%s*%s] --------------------------------------"%(P,O,P));jeda(2)
+				jalan(" [%s*%s] Total akun : %s%s"%(O,P,O,str(len(cepe))))
+				print(" %s[%s*%s] --------------------------------------%s"%(P,O,P,O));jeda(2)
 				cepek = open("sesi.txt", "r").read()
 				print (cepek)
-				exit(" %s[%s*%s] --------------------------------------"%(P,K,P));jeda(2)
+				exit(" %s[%s*%s] --------------------------------------"%(P,O,P));jeda(2)
 			except IOError,KeyError:
-				exit (M+"\n [!] tidak ada hasil awokawokawok")
+				exit (M+"\n [!] Tidak Mendapatkan Pendapatan")
 		else:
 			exit()
 def igg():
-	print ("\n%s [%s!%s] Cth nama %s: %sRomi "%(P,M,P,M,K))
-	usr_ = raw_input('%s [?] Input nama > %s'%(P,K))
-	jumlah = input('%s [?] Limit user > %s'%(P,K))
+	print ("\n%s [%s!%s] Contoh %s: %sRahma "%(P,M,P,M,O))
+	usr_ = raw_input('%s [?] Input > %s'%(P,O))
+	jumlah = input('%s [?] Limit > %s'%(P,O))
 	bff_2 = usr_.replace(" ", "")
 	cr.append("romi_afrizal")
 	mi.append(bff_2+"|"+bff_2)
