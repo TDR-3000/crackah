@@ -1,22 +1,17 @@
 #!/usr/bin/python2
 # coding=utf-8
-# coding by Romi Afrizal
-# Note : jangan di ubah lagi! nanti error, script udah enak
-# Open source code team | ngotak dikit cok jangan jual di perjual belikan 
 
 Hj = '\x1b[1;92m' 
 Mt = '\x1b[0m' 
 ingfo = (
 """%s
- • Info script :
+ • Informasi Alat :
  	
- - author      : Romi Afrizal
- - facebook    : facebook.com/romi.afrizal.102
- - fanspage    : facebook.com/100022086172556
- - whatsap     : +6282371648186
- - github      : github.com/Mark-Zuck
- - script name : ZAFI (Zona Akun Facebook Indonesia)
- - version     : 1.1
+ - Author      : Ramdhan Ramadhian XD
+ - Facebook    : Facebook.com/105805581664563
+ - Instagram   : ramdhan.ramadhian99
+ - Github      : Github.com/Ramdhan7
+ - Tool name   : Crackah The Master Crack
  
 %s"""%(Hj,Mt))
 import os
@@ -66,7 +61,7 @@ Presented%s   \n ______                __         __
   / ____/________ ______/ /______ _/ /_ 
  / /   / ___/ __ `/ ___/ //_/ __ `/ __ \
 / /___/ /  / /_/ / /__/ ,< / /_/ / / / /
-\____/_/   \__,_/\___/_/|_|\__,_/_/ /_/  \n %s[%s+%s] Author : %sRamdhan Ramadhian \n %s[%s+%s] \n %s[%s+%s] Github : Github.com/Ramdhan7/crackah \n [%s+%s] Alamat IP : %s%s'''%
+\____/_/   \__,_/\___/_/|_|\__,_/_/ /_/  \n %s[%s+%s] Author : %sRamdhan Ramadhian \n %s[%s+%s] Facebook : Facebook.com/105805581664563 \n %s[%s+%s] Github : Github.com/Ramdhan7/crackah \n [%s+%s] Alamat IP : %s%s'''%
  (U,O,U,O,U,O,U,O,U,O,P,O,P,U,P,IP))
 # MASUK TOKEN (TOKEN LISTRIK)
 header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), "x-fb-sim-hni": str(random.randint(20000, 40000)), "x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": "NokiaC3-00/5.0 (07.20) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+ ;]", "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
