@@ -1,6 +1,7 @@
 #!/usr/bin/python2
 # coding=utf-8
-# Merecode Tools Orang Tidak akan membuatmu jadi master
+# Merecode Alat Orang Tidak akan membuatmu jadi master
+# Alat Ini Akan Menjadi Error apabila ada yang diubah
 
 Hj = '\x1b[1;92m' 
 Mt = '\x1b[0m' 
