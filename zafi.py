@@ -632,13 +632,13 @@ def menu():
     if unik == '':
         print("%s [!] Isilah Dengan Cinta "%(M));jeda(2);menu()
     elif unik in['1','01']:
-        igg(romz)
+        igg()
     elif unik in['2','02']:
         public(romz)
     elif unik in['3','03']:
         followers(romz)
     elif unik in['4','04']:
-    	postingan()
+    	postingan(romz)
     elif unik in['5','05']:
         ngentod().romiy()
     elif unik in['6','06']:
