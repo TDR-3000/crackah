@@ -197,8 +197,8 @@ def cek_opsi():
 		buka_baju = open(files, "r").readlines()
 	except IOError:
 		exit(p+" ["+k+"•"+m+"•"+p+"] Files %s%s%s Tidak Ada!"%(h,files,p))
-	print(p+" ["+k+"•"+m+"•"+p+"] Total Account Sesi : "+str(len(buka_baju)))
-	print(p+" ["+k+"•"+m+"•"+p+"] Check Opsi Checkpoint, Please Wait...")
+	print(p+" [%s•%s•%s] Total Account Sesi : "+str(len(buka_baju)))
+	print(p+" ["%s•%s•%s] Check Opsi Checkpoint, Please Wait...")
 	for memek in buka_baju:
 		kontol = memek.replace("\n","")
 		titid  = kontol.split(" • ")
