@@ -9,7 +9,7 @@ ingfo = (
 """%s
  • Informasi Alat :
  	
- - Author      : Ramdhan Ramadhian XD
+ - Developer   : Ramdhan Ramadhian XD
  - Facebook    : Facebook.com/105805581664563
  - Instagram   : ramdhan.ramadhian99
  - Github      : Github.com/Ramdhan7
@@ -189,7 +189,7 @@ def postingan(romz,headers=header):
         exit('\n %s[!] gagal dump id'%(P))
 ### Result Hasil
 def cek_opsi():
-	print((%s\n [%s•%s•%s] Masukan File sesi.txt")) '%(P,O,P,O)) 
+	print((%s\n [%s•%s•%s] Masukan File sesi.txt"))'%(P,O,P,O)) 
 	files = input(%s [%s•%s•%s] File: ") '%(P,O,P,O)) 
 	if files == "":
 		cek_opsi()
