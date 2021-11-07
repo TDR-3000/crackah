@@ -248,10 +248,10 @@ class ngentod:
                             os.remove(self.apk);exit()
                         else:
                             print ('\n %s[!] isi yang benar kentod'%(M));zona()
-            print '\n%s [ Pilih Login Crack ]\n'%(P)
-            print ' [%s01%s] Login Lewat Api (Cepat)'%(O,P)
-            print ' [%s02%s] Login Lewat Mbasic (Sedang)'%(O,P)
-            print ' [%s03%s] Login Lewat Mobile (Lambat) '%(O,P)
+                    print '\n%s [ Pilih Login Crack ]\n'%(P)
+                    print ' [%s01%s] Login Lewat Api (Cepat)'%(O,P)
+                    print ' [%s02%s] Login Lewat Mbasic (Sedang)'%(O,P)
+                    print ' [%s03%s] Login Lewat Mobile (Lambat) '%(O,P)
                     zona(pwx.split(','))
                     break
         elif unikers in ('T', 't'):
