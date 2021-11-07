@@ -1,5 +1,6 @@
 #!/usr/bin/python2
 # coding=utf-8
+# Merecode Tools Orang Tidak akan membuatmu jadi master
 
 Hj = '\x1b[1;92m' 
 Mt = '\x1b[0m' 
@@ -190,7 +191,7 @@ class ngentod:
 
     def __init__(self):
         self.id = []
-    def romiy(self):
+    def rmdy(self):
         try:
             self.apk = raw_input('\n %s[?] file dump :%s '%(P,K))
             self.id = open(self.apk).read().splitlines()
@@ -639,7 +640,7 @@ def menu():
     elif unik in['4','04']:
     	postingan(romz)
     elif unik in['5','05']:
-        ngentod().romiy()
+        ngentod().rmdy()
     elif unik in['6','06']:
     	useragent()
     elif unik in['7','07']:
@@ -718,7 +719,7 @@ def igg():
 	usr_ = raw_input('%s [?] Input > %s'%(P,O))
 	jumlah = input('%s [?] Limit > %s'%(P,O))
 	bff_2 = usr_.replace(" ", "")
-	cr.append("romi_afrizal")
+	cr.append("ramdhan_ramadhian")
 	mi.append(bff_2+"|"+bff_2)
 	mi.append(bff_2+"_"+"|"+bff_2)
 	for _i_ in range(1, jumlah+1):
