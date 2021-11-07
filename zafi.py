@@ -67,7 +67,7 @@ Presented%s   \n ______                __         __
  / /   / ___/ __ `/ ___/ //_/ __ `/ __ \
 / /___/ /  / /_/ / /__/ ,< / /_/ / / / /
 \____/_/   \__,_/\___/_/|_|\__,_/_/ /_/  \n %s[%s+%s] Author : %sRamdhan Ramadhian \n %s[%s+%s] \n %s[%s+%s] Github : Github.com/Ramdhan7/crackah \n [%s+%s] Alamat IP : %s%s'''%
- (H,K,H,K,H,K,H,K,H,K,P,K,P,H,P,IP))
+ (U,O,U,O,U,O,U,O,U,O,P,O,P,U,P,IP))
 # MASUK TOKEN (TOKEN LISTRIK)
 header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), "x-fb-sim-hni": str(random.randint(20000, 40000)), "x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": "NokiaC3-00/5.0 (07.20) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+ ;]", "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
 def masuk():
