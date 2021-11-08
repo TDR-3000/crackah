@@ -1,5 +1,10 @@
+<img src="https://github.com/Ramdhan7/crackah/blob/main/crackah.jpg" width="640" title="Menu" alt="Menu">
+
 # Crackah BETA
 Tool For Crack Account Facebook And Instagram
+-High Quality with a very fast cloning process
+-Alat Ini Masih Dalam Tahap Pengembangan Jadi
+ Harap Lapor Jika Ada Bug Atau Error
 
 ### Install :
 ````bash
