@@ -615,7 +615,7 @@ def menu():
     banner()
     print ('\n %s[ Akulah %s%s%s ] \n'%(P,H,nama,P))
     print (' (%s01%s) Instagram Crack Nama'%(O,U)) 
-    print (' (%s02%s) Facebook Crack Public'%(O,P)) 
+    print (' (%s02%s) Facebook Crack Publik'%(O,P)) 
     print (' (%s03%s) Facebook Crack Follow'%(O,P))
     print (' (%s04%s) Facebook Crack Postingan '%(O,P))
     print (' (%s05%s) %sMemulai Operasi Crack %s'%(O,P,M,P)) 
