@@ -2,6 +2,7 @@
 # coding=utf-8
 # Merecode Alat Orang Tidak akan membuatmu jadi master
 # Alat Ini Akan Menjadi Error apabila ada yang diubah
+# Bakekok Berhasil Di Dec Pengen Recode ya? 
 
 Hj = '\x1b[1;92m' 
 Mt = '\x1b[0m' 
@@ -621,7 +622,7 @@ def menu():
     print (' (%s06%s) User Agent'%(O,K)) 
     print (' (%s07%s) Memeriksa Pendapatan Akun'%(O,B))
     #print (' (%s09%s) Gabung group'%(O,P))
-    print (' (%s09%s) Informasi Alat'%(O,P))
+    #print (' (%s09%s) Informasi Alat'%(O,P))
     print (' (%s00%s) Log Out '%(P,H))
     unik = raw_input('\n%s [!] Menu : %s'%(P,O))
     if unik == '':
