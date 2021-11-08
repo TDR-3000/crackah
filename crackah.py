@@ -69,7 +69,7 @@ Presented%s \n_____             __        __
 header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), "x-fb-sim-hni": str(random.randint(20000, 40000)), "x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": "NokiaC3-00/5.0 (07.20) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+ ;]", "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
 def masuk():
     os.system('clear');banner()
-    print ('\n%s [01] Masuk Token \n [%s00%s] Keluar'%(P,M,P))
+    print ('\n%s [01] Masuk Token \n [02] Cara Memakai Alat \n [%s00%s] Keluar'%(P,M,P))
     rom = raw_input('\n%s [?] Menu : %s'%(P,K))
     if rom in(""):
     	print("%s [!] Isi yang benar "%(M));exit()
@@ -80,29 +80,25 @@ def masuk():
         	print("%s [!] Isilah dengan cinta "%(M));exit()
     	try:
             gas = requests.get('https://graph.facebook.com/me?access_token=%s'%(romz)).json()['name']
-            print ('\n%s[√] Login berhasil, mohon tunggu '%(H));jeda(2)
+            print ('\n%s[√] Login bisa, tunggulah '%(H));jeda(2)
             open('token.txt', 'w').write(romz);login_xx()
             exec(base64.b64decode('b3Muc3lzdGVtKCd4ZGctb3BlbiBodHRwczovL3d3dy5mYWNlYm9vay5jb20vcm9taS5hZnJpemFsLjEwMicpO21lbnUoKQ=='))
         except (KeyError,IOError):
         	print("%s [!] Token invalid "%(M));masuk()
     elif rom in ('2', '02'):
     	print ("\n%s%s Berikut cara nya :"%(H,til));jeda(2)
-        print (" - siapkan akun facebook (wajib akun tumbal)");jeda(2)
-        print (" - loginkan akun facebook (tumbal) di browser %sChrome %s"%(O,H));jeda(2)
-        print (" - url alamat wajib %shttps://m.facebook.com %s(mode data)"%(O,H));jeda(2)
-        print (" - salin link : %shttps://m.facebook.com/composer/ocelot/async_loader/?publisher=feed#_=_"%(O));jeda(2)
-        print ("%s - taruh link tersebut di url alamat facebook lalu klik cari "%(H));jeda(2)
-        print (" - jika sudah, klik %stitik tiga %spojok kanan atas "%(O,H));jeda(2)
-        print (" - kemudian klik %sCari di Halaman %s"%(O,H));jeda(2)
-        print (" - ketik %sEAAAA %sakan muncul acces token."%(O,H));jeda(2)
-        print (" - jika sudah jangan lupa di salin \n");jeda(2)
-        nanya = raw_input('%s [?] Anda paham? [%sy%s/%sn%s] :%s '%(P,H,P,M,P,K))
+        print (" - Masuk Token Menggunakan Akun Tumbal");jeda(2)
+        print (" - Pilih Salah Satu Menu Crack Facebook Untuk %sDump %s"%(O,K));jeda(2)
+        print (" - Salin File Dump %sMisalnya Itu %sDump/Kontol.json)"%(O,H));jeda(2)
+        print (" - Pilih Menu No 5 Nanti kalo diminta %sFile tempellah Dump/Blabla.json tadi"%(O));jeda(2)
+        print ("%s - Seterusnya Sudah Diterangkan Di Alat "%(H));jeda(2)
+        nanya = raw_input('%s [?] Ngerti Gak ?[%sy%s/%sn%s] :%s '%(P,H,P,M,P,K))
         if nanya in(""):
-        	print ("%s [!] saya bertanya wajib di jawab "%(M));jeda(2);masuk()
+        	print ("%s [!] Ayo dijawab kalo gak ngerti kasitau "%(M));jeda(2);masuk()
         elif nanya in("y","Y"):
-        	print ("\n%s [√] selamat anda pintar :* "%(H));jeda(2);masuk()
+        	print ("\n%s [√] Nah Tuh Paham Mulai Crack sono! :* "%(H));jeda(2);masuk()
         elif nanya in("n","N"):
-        	print ("\n%s [!] anda sungguh tolol "%(M));jeda(2);os.system("xdg-open https://youtu.be/IG5QfdxRkeY");masuk()
+        	print ("\n%s [!] Memek Lah,Minta Digetok lu ? "%(M));jeda(2);os.system("xdg-open https://youtu.be/IG5QfdxRkeY");masuk()
     elif rom in ('0', '00'):
     	exit('\n')
     else:
@@ -217,7 +213,7 @@ class ngentod:
                         elif ind in ('1', '01'):
                             print '\n %s[%s*%s] akun %sOK%s tersimpan di >%s hasil/OK-%s-%s-%s.txt'%(P,K,P,H,P,H,ha, op, ta);jeda(0.2)
                             print '%s [%s*%s] akun %sCP %stersimpan di > %shasil/CP-%s-%s-%s.txt'%(P,K,P,K,P,K,ha, op, ta);jeda(0.2)
-                            print '%s [%s!%s] setiap crack 1k ID, gunakan mode pesawat 2 detik\n'%(P,M,P);jeda(0.2)
+                            print '%s [%s!%s] Hidupkan Mode Pesawat 5 Detik Setiap 7 Menit\n'%(P,M,P);jeda(0.2)
                             with ThreadPoolExecutor(max_workers=30) as log:
                                 for akun in self.id:
                                     try:
@@ -228,7 +224,7 @@ class ngentod:
                         elif ind in ('2', '02'):
                             print '\n%s [%s*%s] akun %sOK%s tersimpan di >%s hasil/OK-%s-%s-%s.txt'%(P,K,P,H,P,H,ha, op, ta);jeda(0.2)
                             print '%s [%s*%s] akun %sCP %stersimpan di > %shasil/CP-%s-%s-%s.txt'%(P,K,P,K,P,K,ha, op, ta);jeda(0.2)
-                            print '%s [%s!%s] setiap crack 1k ID, gunakan mode pesawat 2 detik\n'%(P,M,P);jeda(0.2)
+                            print '%s [%s!%s] Hidupkan Mode Pesawat 5 Detik Setiap 7 Menit\n'%(P,M,P);jeda(0.2)
                             with ThreadPoolExecutor(max_workers=30) as log:
                                 for akun in self.id:
                                     try:
@@ -239,7 +235,7 @@ class ngentod:
                         elif ind in ('3', '03'):
                             print '\n %s[%s*%s] akun %sOK%s tersimpan di >%s hasil/OK-%s-%s-%s.txt'%(P,K,P,H,P,H,ha, op, ta);jeda(0.2)
                             print '%s [%s*%s] akun %sCP %stersimpan di > %shasil/CP-%s-%s-%s.txt'%(P,K,P,K,P,K,ha, op, ta);jeda(0.2)
-                            print '%s [%s!%s] setiap crack 1k ID, gunakan mode pesawat 2 detik\n'%(P,M,P);jeda(0.2)
+                            print '%s [%s!%s] Hidupkan Mode Pesawat 5 Detik Setiap 7 Menit\n'%(P,M,P);jeda(0.2)
                             with ThreadPoolExecutor(max_workers=30) as log:
                                 for akun in self.id:
                                     try:
@@ -302,7 +298,7 @@ class ngentod:
         elif suuu in ('3', '03'):
             print '\n %s[%s*%s] akun %sOK%s tersimpan di >%s hasil/OK-%s-%s-%s.txt'%(P,K,P,H,P,H,ha, op, ta);jeda(0.2)
             print '%s [%s*%s] akun %sCP %stersimpan di > %shasil/CP-%s-%s-%s.txt'%(P,K,P,K,P,K,ha, op, ta);jeda(0.2)
-            print '%s [%s!%s] setiap crack 1k ID, gunakan mode pesawat 2 detik\n'%(P,M,P);jeda(0.2)
+            print '%s [%s!%s] Hidupkan Mode Pesawat 5 Detik Setiap 7 Menit\n'%(P,M,P);jeda(0.2)
             with ThreadPoolExecutor(max_workers=30) as log:
             	for akun in self.id: 
                     try:
@@ -624,9 +620,8 @@ def menu():
     print (' (%s03%s) Facebook Crack Follow'%(O,P))
     print (' (%s04%s) Facebook Crack Postingan '%(O,P))
     print (' (%s05%s) %sMemulai Operasi Crack %s'%(O,P,M,P)) 
-    print (' (%s06%s) User agent'%(O,K)) 
-    print (' (%s07%s) Cek Pendapatan Akun'%(O,B))
-    print (' (%s08%s) Cek Jenis Checkpoint'%(H,O)) 
+    print (' (%s06%s) User Agent'%(O,K)) 
+    print (' (%s07%s) Memeriksa Pendapatan Akun'%(O,B))
     #print (' (%s09%s) Gabung group'%(O,P))
     print (' (%s09%s) Informasi Alat'%(O,P))
     print (' (%s00%s) Log Out '%(P,H))
@@ -650,8 +645,6 @@ def menu():
         print "%s [02] Pendapatan Instagram "%(P)
         c = raw_input('\n%s [?] Menu : %s'%(P,O))
     	hasill(c)
-    elif unik in['8','08']:
-        cek_opsi()
     elif unik in['8','08']:
         os.system("xdg-open https://www.facebook.com/groups/924679595149360")
     elif unik in['9','09']:
