@@ -903,11 +903,11 @@ def menu():
         followers(romz)
     elif unik in['4','04']:
     	postingan(romz)
-    elif slut in['5','05']:
+    elif unik in['5','05']:
     	dumpfl();exit()
-    elif slut in['6','06']:
+    elif unik in['6','06']:
         group(__romz__())
-    elif slut in['7','07']:
+    elif unik in['7','07']:
     	pesan(__romz__())
     elif unik in['8','08']:
         ngentod().rmdy()
