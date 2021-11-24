@@ -888,7 +888,7 @@ def menu():
     print (' (%s08%s) %sMemulai Operasi Crack %s'%(O,P,M,P)) 
     print (' (%s09%s) User Agent'%(O,K)) 
     print (' (%s10%s) Memeriksa Pendapatan Akun'%(O,B))
-    print (' (%s11%s) Memeriksa Jenis Chekpoint/Opsi CP
+    print (' (%s11%s) Memeriksa Jenis Chekpoint/Opsi CP%(O,H))
     #print (' (%s12%s) Gabung group'%(O,P))
     #print (' (%s13%s) Informasi Alat'%(O,P))
     print (' (%s00%s) Log Out '%(P,H))
